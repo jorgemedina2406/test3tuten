@@ -1,0 +1,31 @@
+<div class="kt-grid kt-grid--ver kt-grid--root" style="height: 100%;">
+    <div class="kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v2 kt-login--signin" id="kt_login">
+        <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url(assets/media/bg/bg-1.jpg);">
+            <div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
+                <div class="kt-login__container shadow p-4">
+                    <div class="kt-login__logo text-white">
+                        <h2>
+                            TEST TUTEN
+                        </h2>
+                    </div>
+                    <div class="kt-login__signin">
+                        <div class="kt-login__head">
+                            <h3 class="kt-login__title">Iniciar sesion</h3>
+                        </div>
+                        <form ngNativeValidate #f="ngForm" class="kt-form" (ngSubmit)="login( f )">
+                            <div class="input-group">
+                                <input ngModel name="email" class="form-control" type="email" required placeholder="Correo del usuario">
+                            </div>
+                            <div class="input-group">
+                                <input ngModel name="password" class="form-control" type="password" required placeholder="Contraseña">
+                            </div>
+                            <div class="kt-login__actions">
+                                <button id="kt_login_signin_submit" class="btn btn-pill kt-login__btn-primary">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

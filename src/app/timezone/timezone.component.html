@@ -1,0 +1,23 @@
+<div class="container bg-light p-5 border shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form ngNativeValidate #f="ngForm" class="kt-form" (ngSubmit)="timezone( f )">
+                    <div class="input-group">
+                        <input ngModel name="time" class="form-control" type="text" required placeholder="Hora a transformar">
+                    </div>
+                    <div class="input-group mt-3">
+                        <input ngModel name="utc" class="form-control" type="text" required placeholder="UTC (-3)">
+                    </div>
+                    <div class="kt-login__actions mt-3">
+                        <button id="kt_login_signin_submit" class="btn btn-primary">Transformar</button>
+                        <a class="btn btn-danger text-white pointer ml-3" [routerLink]="['/info/usuario']">Regresar</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 text-center mt-3" *ngIf="data">
+                <h3>La nueva hora es: {{ time }}</h3>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container bg-light py-5 border shadow mb-3 text-center">
+    <a class="btn btn-primary text-white pointer" [routerLink]="['/info/timezone']">Timezone</a>
+</div>
+<div class="container bg-light p-5 border shadow">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Filtro de busqueda:</h4>
+                <input type="text" class="form-control" name="searchText" placeholder="Buscar por BookingId o Precio..." [(ngModel)]="searchText">
+            </div>
+        </div>
+
+        <table class="table mt-3">
+            <thead class="text-primary bg-secondary text-center">
+                <th>BookingId</th>
+                <th>Cliente</th>
+                <th>Fecha de Creación</th>
+                <th>Direccion</th>
+                <th>Precio</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of info | filter:{bookingId:searchText, bookingPrice:searchText, bookingTime:searchText}; let i=index;">
+                    <td>{{ item.bookingId }}</td>
+                    <td>{{ item.tutenUserClient.firstName }}</td>
+                    <td>{{ item.bookingTime | date }}</td>
+                    <td>{{ item.locationId.streetAddress }}</td>
+                    <td>{{ item.bookingPrice }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container mt-3">
+    <a class="btn btn-danger float-right text-white pointer" (click)="logout()">Salir</a>
+</div>
